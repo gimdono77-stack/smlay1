@@ -1,111 +1,51 @@
 <!DOCTYPE html>
 <html lang="my">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#5a1827">
-  <title>ရွှေမန်းလေး | ဆက်သွယ်ရန်</title>
-  <style>
-    :root {
-      --wine: #641d30;
-      --wine-deep: #42121f;
-      --gold: #e6bd62;
-      --gold-light: #f5df9f;
-      --cream: #fffaf0;
-      --ink: #38272a;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; }
-    body {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      padding: 24px;
-      color: var(--ink);
-      font-family: "Noto Sans Myanmar", "Myanmar Text", "Pyidaungsu", sans-serif;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(230,189,98,.22) 0 90px, transparent 91px),
-        radial-gradient(circle at 86% 75%, rgba(100,29,48,.09) 0 150px, transparent 151px),
-        linear-gradient(135deg, #fffaf0 0%, #f6edda 55%, #fff8e9 100%);
-      position: relative;
-    }
-    .orb {
-      position: fixed; border-radius: 50%; pointer-events: none;
-      border: 1px solid rgba(100,29,48,.10);
-      box-shadow: inset 0 0 45px rgba(100,29,48,.035), 0 14px 50px rgba(65,30,20,.035);
-    }
-    .orb.one { width: 280px; height: 280px; top: -100px; right: 8%; }
-    .orb.two { width: 150px; height: 150px; top: 16%; left: 7%; background: rgba(230,189,98,.06); }
-    .orb.three { width: 360px; height: 360px; bottom: -190px; left: 20%; }
-    .orb.four { width: 90px; height: 90px; bottom: 16%; right: 12%; background: rgba(100,29,48,.04); }
-    main {
-      width: min(100%, 680px);
-      text-align: center;
-      padding: clamp(36px, 7vw, 70px) clamp(22px, 6vw, 64px);
-      border: 1px solid rgba(142,103,43,.22);
-      border-radius: 28px;
-      background: rgba(255,252,245,.78);
-      box-shadow: 0 28px 90px rgba(69,32,30,.10);
-      backdrop-filter: blur(8px);
-      position: relative;
-      z-index: 1;
-    }
-    .eyebrow {
-      margin: 0 0 18px;
-      color: #876c3a;
-      font-size: clamp(13px, 2.2vw, 16px);
-      letter-spacing: .02em;
-    }
-    .contact {
-      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
-      width: min(100%, 360px);
-      min-height: 68px;
-      padding: 16px 28px;
-      border-radius: 15px;
-      color: #351019;
-      text-decoration: none;
-      font-size: clamp(18px, 3vw, 22px);
-      font-weight: 700;
-      background: linear-gradient(135deg, #f5d986, #dcae48);
-      border: 1px solid #c79b3e;
-      box-shadow: 0 10px 0 rgba(111,71,20,.12), 0 18px 30px rgba(130,83,22,.15);
-      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-    }
-    .contact:hover { transform: translateY(-3px); filter: brightness(1.03); box-shadow: 0 13px 0 rgba(111,71,20,.10), 0 22px 34px rgba(130,83,22,.19); }
-    .contact:focus-visible { outline: 3px solid var(--wine); outline-offset: 5px; }
-    .arrow { font-family: Arial, sans-serif; font-size: 24px; line-height: 1; }
-    .offer {
-      margin: 29px 0 0;
-      color: #76505a;
-      font-size: clamp(14px, 2.5vw, 17px);
-      line-height: 1.8;
-    }
-    .offer strong { color: var(--wine); font-weight: 700; }
-    .bottom-line {
-      width: 54px; height: 3px; margin: 28px auto 0;
-      border-radius: 99px; background: var(--gold);
-    }
-    @media (max-width: 480px) {
-      body { padding: 16px; }
-      main { border-radius: 22px; }
-      .orb.one { right: -150px; }
-      .orb.three { left: -160px; }
-    }
-    @media (prefers-reduced-motion: reduce) { .contact { transition: none; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f0e5">
+<title>ဆက်သွယ်ရန်</title>
+<style>
+:root{color-scheme:light;--page:#f7f0e5;--ink:#5a2433;--burgundy:#7b2439;--deep:#4d1728;--gold:#d8b875}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:"Noto Sans Myanmar","Myanmar Text",system-ui,sans-serif;background:var(--page);color:var(--ink)}
+.page{position:relative;isolation:isolate;display:grid;place-items:center;min-height:100svh;width:100%;overflow:hidden;padding:32px 22px;background:radial-gradient(ellipse at 50% 48%,#fffaf1 0%,transparent 44%),linear-gradient(135deg,var(--page),#eee0d0)}
+.shape{position:absolute;z-index:-1;pointer-events:none}
+.shape-a{width:min(54vw,620px);aspect-ratio:1;border-radius:50%;top:-34%;left:-14%;border:1px solid color-mix(in srgb,var(--gold) 75%,transparent);box-shadow:inset 0 0 0 22px color-mix(in srgb,var(--burgundy) 3%,transparent),0 0 0 34px color-mix(in srgb,var(--burgundy) 4%,transparent)}
+.shape-b{width:min(60vw,700px);aspect-ratio:1;border-radius:50%;right:-23%;bottom:-48%;background:linear-gradient(140deg,color-mix(in srgb,var(--burgundy) 95%,transparent),color-mix(in srgb,var(--deep) 82%,transparent));box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--gold) 85%,transparent)}
+.shape-c{width:clamp(230px,34vw,430px);aspect-ratio:1;border-radius:50%;border:1px solid color-mix(in srgb,var(--burgundy) 18%,transparent);top:50%;left:50%;transform:translate(-50%,-50%)}
+.shape-c:before,.shape-c:after{content:"";position:absolute;border-radius:50%;border:1px solid color-mix(in srgb,var(--gold) 65%,transparent)}
+.shape-c:before{inset:14px}.shape-c:after{inset:-18px;border-color:color-mix(in srgb,var(--burgundy) 12%,transparent)}
+.dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 7px color-mix(in srgb,var(--gold) 13%,transparent)}
+.dot-one{top:29%;left:29%}.dot-two{right:28%;bottom:29%;width:6px;height:6px;background:var(--burgundy)}
+.content{width:min(100%,560px);display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 16px}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 0 42px;color:var(--burgundy);font-size:clamp(14px,2.1vw,18px);letter-spacing:.01em;line-height:1.9;text-wrap:balance}
+.eyebrow:before,.eyebrow:after{content:"";display:block;width:clamp(24px,6vw,58px);height:1px;background:linear-gradient(90deg,transparent,var(--burgundy));opacity:.7}
+.eyebrow:after{transform:scaleX(-1)}
+.button-wrap{position:relative;width:min(100%,390px)}
+.contact-button{display:flex;align-items:center;justify-content:center;gap:19px;width:100%;min-height:86px;padding:22px 28px;border-radius:999px;border:1px solid color-mix(in srgb,var(--gold) 75%,white);background:linear-gradient(120deg,var(--burgundy),var(--deep));color:#fffdf3;font:inherit;font-size:clamp(22px,3.4vw,30px);font-weight:700;text-decoration:none;box-shadow:0 17px 36px color-mix(in srgb,var(--burgundy) 20%,transparent),inset 0 1px 0 color-mix(in srgb,white 24%,transparent);transition:transform .2s ease,box-shadow .2s ease;-webkit-tap-highlight-color:transparent}
+.contact-button:hover{transform:translateY(-3px);box-shadow:0 22px 42px color-mix(in srgb,var(--burgundy) 25%,transparent),inset 0 1px 0 color-mix(in srgb,white 24%,transparent)}
+.contact-button:focus-visible{outline:3px solid var(--gold);outline-offset:6px}
+.send-icon{width:29px;height:29px;flex:0 0 auto}
+.arrow{display:grid;place-items:center;width:40px;height:40px;flex:0 0 auto;border:1px solid color-mix(in srgb,white 36%,transparent);border-radius:50%;font-family:Arial,sans-serif;font-size:24px;font-weight:400;line-height:1}
+@media(max-width:520px){.eyebrow{margin-bottom:42px;gap:10px}.contact-button{min-height:74px;padding:18px 20px;gap:13px}.arrow{width:34px;height:34px;font-size:20px}.shape-a{width:85vw;top:-15%;left:-38%}.shape-b{width:100vw;right:-48%;bottom:-25%}}
+@media(prefers-reduced-motion:reduce){.contact-button{transition:none}}
+</style>
 </head>
 <body>
-  <div class="orb one"></div><div class="orb two"></div>
-  <div class="orb three"></div><div class="orb four"></div>
-  <main>
-    <p class="eyebrow">ယုံကြည်စွာ ဆော့ကစားနိုင်ပါသည်</p>
-    <!-- Replace the URL below with your official Telegram, Viber, or Messenger contact link. -->
-    <a class="contact" href="https://smlay.com/" target="_blank" rel="noopener noreferrer">
-      ဆက်သွယ်ရန် <span class="arrow" aria-hidden="true">→</span>
-    </a>
-    <p class="offer"><strong>3000 အသွင်း</strong> · <strong>9000 ဆွတ်ယူလိုက်ပါ</strong></p>
-    <div class="bottom-line"></div>
-  </main>
+<main class="page">
+<div class="shape shape-a" aria-hidden="true"></div><div class="shape shape-b" aria-hidden="true"></div><div class="shape shape-c" aria-hidden="true"></div>
+<span class="dot dot-one" aria-hidden="true"></span><span class="dot dot-two" aria-hidden="true"></span>
+<section class="content" aria-label="ဆက်သွယ်ရန်">
+<p class="eyebrow">ယုံကြည်စွာ ဆော့ကစားနိုင်ပါသည်</p>
+<div class="button-wrap">
+<a class="contact-button" href="https://smlay.com/" target="_blank" rel="noopener noreferrer" aria-label="ဆက်သွယ်ရန်">
+<svg class="send-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.2 3.2 14.6 20c-.4 1-1.8 1-2.2 0l-3-6.2-6.2-3c-1-.4-1-1.8 0-2.2l16.8-6.6c.7-.3 1.5.5 1.2 1.2Z" fill="currentColor"/><path d="m9.4 13.8 5.1-5.1" stroke="#4d1728" stroke-width="1.2" stroke-linecap="round"/></svg>
+<span>ဆက်သွယ်ရန်</span><span class="arrow" aria-hidden="true">→</span>
+</a>
+</div>
+</section>
+</main>
 </body>
 </html>
